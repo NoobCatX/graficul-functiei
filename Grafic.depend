@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1608208339 source:d:\codeblocks\grafic\main.cpp
+	<stdio.h>
+	<graphics.h>
+	"firstPage.hpp"
+
+1608212149 d:\codeblocks\grafic\firstpage.hpp
+	"structures.hpp"
+	"components.hpp"
+	"secondPage.hpp"
+
+1608205922 d:\codeblocks\grafic\structures.hpp
+
+1608212057 d:\codeblocks\grafic\components.hpp
+	"globalVars.hpp"
+
+1608208343 d:\codeblocks\grafic\globalvars.hpp
+
+1608212558 d:\codeblocks\grafic\secondpage.hpp
+	"structures.hpp"
+	"eval.hpp"
+
+1608021251 d:\codeblocks\grafic\eval.hpp
+	<math.h>
+

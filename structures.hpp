@@ -16,5 +16,21 @@ struct inputField {
     const int bottom = 250;
     const int width = right - left;
     const int height = bottom - top;
+
 }rect;
+
+struct graphic
+{
+    float left;
+    float right;
+
+    struct
+    {
+        int x, y;
+    } mid;
+
+    int zoomx;
+    int zoomy;
+
+}G;
 #endif

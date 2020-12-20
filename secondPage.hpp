@@ -1,5 +1,7 @@
+#include <iostream>
 #include "structures.hpp"
-#include "eval.hpp"
+#include "eval2.hpp"
+#include "drawGraph.hpp"
 char left[10];
 char right[10];
 int isLeft = -1;
@@ -79,12 +81,20 @@ void DEL2(int k)
 
 void EVAL()
 {
+
     FILE* in_file = fopen("input.txt","r");
     char s[256];
+    char e[256]="";
+    int left_int, right_int;
+    int values[1000], k=0;
     fgets(s,256,in_file);
     s[strlen(s)-1]=NULL;
-    evaluator(s,1);
+
+    fscanf(in_file, "%d %d", &left_int, &right_int);
     fclose(in_file);
+    printf("left: %d\nright: %d\n", left_int, right_int);
+
+    drawGraphic();
 }
 
 void click_handler_two(int x, int y)

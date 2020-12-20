@@ -1,6 +1,9 @@
 # depslib dependency file v1.0
-1608208339 source:d:\codeblocks\grafic\main.cpp
+1608396787 source:d:\codeblocks\grafic\main.cpp
 	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<cmath>
 	<graphics.h>
 	"firstPage.hpp"
 
@@ -9,17 +12,22 @@
 	"components.hpp"
 	"secondPage.hpp"
 
-1608205922 d:\codeblocks\grafic\structures.hpp
+1608504517 d:\codeblocks\grafic\structures.hpp
 
 1608212057 d:\codeblocks\grafic\components.hpp
 	"globalVars.hpp"
 
 1608208343 d:\codeblocks\grafic\globalvars.hpp
 
-1608212558 d:\codeblocks\grafic\secondpage.hpp
+1608502466 d:\codeblocks\grafic\secondpage.hpp
+	<iostream>
 	"structures.hpp"
-	"eval.hpp"
+	"eval2.hpp"
+	"drawGraph.hpp"
 
-1608021251 d:\codeblocks\grafic\eval.hpp
-	<math.h>
+1608399546 d:\codeblocks\grafic\eval.hpp
+
+1608505782 d:\codeblocks\grafic\drawgraph.hpp
+
+1608481468 d:\codeblocks\grafic\eval2.hpp
 

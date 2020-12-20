@@ -33,7 +33,9 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="components.hpp" />
+		<Unit filename="drawGraph.hpp" />
 		<Unit filename="eval.hpp" />
+		<Unit filename="eval2.hpp" />
 		<Unit filename="firstPage.hpp" />
 		<Unit filename="globalVars.hpp" />
 		<Unit filename="input.txt" />

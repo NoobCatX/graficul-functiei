@@ -1,11 +1,12 @@
-
-struct stiva {
+struct stiva
+{
     char info;
     stiva *urm;
 };
 
-struct stiva2{
-    double info;
+struct stiva2
+{
+    float info;
     stiva2 *urm;
 };
 
@@ -48,7 +49,7 @@ bool opr(char c[], int &t)
     return false;
 }
 
-double operatie(double x, double y, char c)
+float operatie(float x, float y, char c, char e[])
 {
     if(c == '+')
         return x + y;
@@ -57,7 +58,12 @@ double operatie(double x, double y, char c)
     if(c == '*')
         return x * y;
     if(c == '/')
-        return y / x;
+    {
+        if(x == 0)
+            strcpy(e,"error");
+        else
+            return y / x;
+    }
     if(c == '^')
         return pow(y,x);
     if(c == 's')
@@ -75,7 +81,7 @@ double operatie(double x, double y, char c)
         if(x >= 0)
             return sqrt(x);
         else
-            return -1;
+            strcpy(e,"error");
     }
     if(c == 'e')
         return exp(x);
@@ -83,7 +89,7 @@ double operatie(double x, double y, char c)
 }
 
 
-void push(stiva2* &f, double x)
+void push(stiva2* &f, float x)
 {
     stiva2 *p = new stiva2;
     p->info = x;
@@ -114,33 +120,40 @@ void pop(stiva2* &f)
 }
 
 
-double evaluator(char c[], double x)
+float evaluator(char c[], float x, char e[])
 {
-    char op[] = "()+-*/^";
+    char op[] = "+-*/^",aux[256];
     int t,z=0;
     stiva *s;
     stiva2 *f;
-    strcpy(c+1,c);
+    strcpy(e,"*");
+    strcpy(aux,c);
+    strcpy(c+1,aux);
     c[0] = '(';
     pushC(s,'(');
     strcat(c,")");
     for(int i = 1; i < strlen(c); i++)
     {
+        if((strchr(op,c[i]) && strchr(op,c[i+1])) || (c[i] == ')' && c[i+1] == '('))
+        {
+            strcpy(e,"error");
+            return 0;
+        }
         int y = priority(c[i]);
         if((c[i] == 's' && c[i+1] == 'q') || (c[i] == 'l' && c[i+1] == 'o'))
             i++;
         if(y != -1 && (y > priority(s->info) || c[i] == '('))
+        {
+            if(opr(c+i,t))
             {
-                if(opr(c+i,t))
-                {
-                    pushC(s,c[i]);
-                    i+=t;
-                }
-                else if(c[i] == '-' && c[i-1] == '(')
-                    z = 1;
-                else
-                    pushC(s,c[i]);
+                pushC(s,c[i]);
+                i+=t;
             }
+            else if(c[i] == '-' && c[i-1] == '(')
+                z = 1;
+            else
+                pushC(s,c[i]);
+        }
         else if(c[i] == 'x')
         {
             if(z == 1)
@@ -164,7 +177,7 @@ double evaluator(char c[], double x)
         }
         else if(c[i] >= 48 && c[i] <= 57)
         {
-            double d = c[i]-48;
+            float d = c[i]-48;
             while((c[i+1] >= 48 && c[i+1] <= 57))
             {
                 d = d * 10 + (c[i+1]-48);
@@ -175,7 +188,7 @@ double evaluator(char c[], double x)
                 i++;
                 while((c[i+1] >= 48 && c[i+1] <= 57))
                 {
-                    d = d + (double)(c[i+1]-48) / 10;
+                    d = d + (float)(c[i+1]-48) / 10;
                     i++;
                 }
             }
@@ -190,21 +203,22 @@ double evaluator(char c[], double x)
         {
             while(y < priority(s->info) && s != NULL)
             {
-                double d = f->info,g;
+                float d = f->info,g;
                 pop(f);
                 if(strchr(op,s->info))
                 {
                     g = f->info;
                     pop(f);
-                    push(f,operatie(d,g,s->info));
+                    push(f,operatie(d,g,s->info,e));
                     popC(s);
                 }
                 else
                 {
-                    push(f,operatie(d,1,s->info));
+                    push(f,operatie(d,1,s->info,e));
                     popC(s);
                 }
-
+                if(!strcmp(e,"error"))
+                    return 0;
             }
             if(s->info == '(' && c[i] == ')')
                 popC(s);
@@ -213,8 +227,16 @@ double evaluator(char c[], double x)
         }
 
     }
-    //printf("\neval info: %lf\n",f->info);
-    return f->info;
+    if(s == NULL)
+    {
+        printf("%lf",f->info);
+        return f->info;
+    }
+    else
+    {
+        strcpy(e,"error");
+        return 0;
+    }
 }
 
 

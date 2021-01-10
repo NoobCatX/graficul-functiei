@@ -1,0 +1,17 @@
+Function graphic
+   Project made by the team formed by Munteanu
+Catalin and Pasat Cosmin during the course
+'Introduction to programming'.
+
+The program has the following features:
+
+- drawing the graph of any mathematical function
+  corresponding to an interval in the system
+  xoy coordinates including ramificated ones
+- allows the zooming in and out effect
+- displays the min / max points
+- displays asymptotes
+- detects the points of intersection with the axes
+  of coordinates
+- saves the graphic in the form of an image
+  in BMP format

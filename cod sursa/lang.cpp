@@ -1,0 +1,45 @@
+
+    strcpy(L.lang[0],"GRAFICUL FUNCTIEI");
+    strcpy(L.lang[1],"START");
+    strcpy(L.lang[2],"SETARI");
+    strcpy(L.lang[3],"DESPRE");
+    strcpy(L.lang[4],"IESIRE");
+    strcpy(L.lang[5],"LIMBA");
+    strcpy(L.lang[6],"MUZICA");
+    strcpy(L.lang[7],"INAPOI");
+    strcpy(L.lang[8],"IESITI ?");
+    strcpy(L.lang[9],"DA");
+    strcpy(L.lang[10],"NU");
+    strcpy(L.lang[11],"INTRODUCETI FUNCTIA");
+    strcpy(L.lang[12],"URMATORUL PAS");
+    strcpy(L.lang[13],"INTRODUCETI INTERVALUL");
+    strcpy(L.lang[14],"STANGA:");
+    strcpy(L.lang[15],"DREAPTA:");
+    strcpy(L.lang[16],"NOU");
+    strcpy(L.lang[17],"ASIMPTOTE");
+    strcpy(L.lang[18],"PUNCTE I.");
+    strcpy(L.lang[19],"STERGE");
+    strcpy(L.lang[20],"GRESEALA SINTACTICA");
+
+
+    strcpy(L.lang[21],"FUNCTION GRAPHIC");
+    strcpy(L.lang[22],"START");
+    strcpy(L.lang[23],"SETTINGS");
+    strcpy(L.lang[24],"ABOUT");
+    strcpy(L.lang[25],"EXIT");
+    strcpy(L.lang[26],"LANGUAGE");
+    strcpy(L.lang[27],"MUSIC");
+    strcpy(L.lang[28],"BACK");
+    strcpy(L.lang[29],"LEAVE ?");
+    strcpy(L.lang[30],"YES");
+    strcpy(L.lang[31],"NO");
+    strcpy(L.lang[32],"ENTER THE FUNCTION");
+    strcpy(L.lang[33],"NEXT STEP");
+    strcpy(L.lang[34],"ENTER THE INTERVAL");
+    strcpy(L.lang[35],"LEFT:");
+    strcpy(L.lang[36],"RIGHT:");
+    strcpy(L.lang[37],"NEW");
+    strcpy(L.lang[38],"ASYMPTOTE");
+    strcpy(L.lang[39],"I. POINTS");
+    strcpy(L.lang[40],"CLEAR");
+    strcpy(L.lang[41],"SINTACTIC ERROR");

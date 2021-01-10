@@ -1,0 +1,17 @@
+Graficul functiei
+  Proiect realizat de echipa formata din Munteanu
+Catalin si Pasat Cosmin in cadrul cursului
+'Introducere in programare'.
+
+Programul dispune de urmatoarele functionalitati:
+
+- desenarea graficului oricarei functii matematice
+  corespunzator unui interval in sistemul de
+  coordonate xoy inclusiv pe ramuri
+- permite efectul de lupa
+- afiseaza punctele de min/max
+- afiseaza asimptotele
+- detecteaza punctele de intersectie cu axele
+  de coordonate
+- salveaza graficul in forma de imagine
+  in formatul BMP
